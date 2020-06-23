@@ -1,0 +1,116 @@
+\documentclass[a4paper,12pt]{article}
+% document preamble starts
+\usepackage[colorlinks=true,linkcolor=black]{hyperref}
+\usepackage{fullpage}
+%\hyperref
+
+\title{Webinar on \LaTeX}
+\author{Prateek Raj Gautam}
+%\email{mailto:prateekrajgautam@gmail.com}
+
+
+% document preamble ends
+
+
+
+
+
+
+%main Document START here
+\begin{document}
+\maketitle
+\newpage
+$L^AT_EX$
+\tableofcontents
+\newpage
+\section{Installation and basic tools}
+Download TEXLIVE iso  from url \url{http://www.tug.org/texlive/}. Same iso image can be used on both linux and windows. Just mount it and run install command in the root directory and accept default options. It might take around 20 minutes to complete installation.
+\subsection{editors}
+Although tex files can be edited in any basic text editor. just create a file with extension *.tex. you can create a new file newDoc.txt edit it save it and rename it as newDoc.tex so it can be used by tex or latex system.
+
+However, to ease the process we will use TEXWORKS \url{https://github.com/TeXworks/texworks/releases} the default latex editor/compiler that comes with the texlive. This is the minimalist kind of software, in my opinion best for beginners. Later, you might want to try other editors like \url{https://www.texstudio.org/} or \url{https://www.texniccenter.org/}.
+
+\subsubsection{Shortcuts for texworks}
+\begin{table}[!htbp]
+\begin{tabular}{l|l}
+\hline
+shortcut&function\\
+\hline
+$ctrl+t$&compile\\
+$\left. ctrl+shift+\right]$& comment line\\
+$\left. ctrl+shift+\right[$& uncomment line\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{skeleton file}
+
+anyname.tex\\
+\rule{\textwidth}{1pt}
+\begin{verbatim}
+\documentclass{article}
+
+
+\begin{document}
+
+welcome
+
+\end{document}
+\end{verbatim}
+\rule{\textwidth}{1pt}
+after-compiling this file you will get a anyname.pdf file in the same folder with text ``welcome''
+\\
+$\backslash$documentclass should always be first line.\\
+it can be used as any of the following each offer different set of options
+$\backslash$documentclass\{article\}\\
+$\backslash$documentclass\{book\}\\
+$\backslash$documentclass\{letter\}\\
+$\backslash$documentclass\{elsarticle\}\\
+
+we can pass we extra options like selectction of default paper size as 
+$\backslash$documentclass[a4paper]\{article\}\\
+$\backslash$documentclass[letterpaper]\{article\}\\
+
+we can select default font size as 10pt,11pt, or 12pt as\\
+$\backslash$documentclass[a4paper,11pt]\{article\}\\
+
+to print anything in document we write between $\backslash$begin\{document\} and $\backslash$end\{document\} .
+
+the region before $\backslash$begin\{document\} is called document preamble and it is used to add different packages, function that alter the formatting to final document.
+
+
+\section{section and subsection}
+\subsection{label and ref}
+\subsection{hyperref}
+\subsubsection{colorlinks=true and linkcolor=black}
+\section{math and symbols}
+\section{list and items}
+\subsection{enumerate}
+\subsection{itemize}
+
+
+\subsection{subsection}
+\subsubsection{subsubsection}
+In section \ref{sec:eqn} we describe eqn, in section \ref{sec:list} list
+
+
+
+\section{list\label{sec:list}}
+
+%\section{new addition}
+\section{eqn\label{sec:eqn}}
+\subsection{subsection}
+
+\subsubsection{??}
+
+Hi welcome to \LaTeX webinar
+
+\end{document}
+% main Document END here
+
+
+
+
+
+%Comments start with %
+% to compile press ctrl+t or hit the play button 
