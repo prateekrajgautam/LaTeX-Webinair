@@ -1,8 +1,8 @@
-\documentclass[a4paper,10pt,onecolumn]{book}
+\documentclass[twocolumn]{book}
 % document preamble starts
 \usepackage[colorlinks=true,linkcolor=black]{hyperref}
-\usepackage{amsmath,array}
-\usepackage{lipsum,blindtext,graphicx,verbatim}
+\usepackage{fullpage,amsmath,array}
+\usepackage{lipsum,blindtext,graphicx,verbatim,placeins}
 %\hyperref
 
 
@@ -20,12 +20,28 @@
 
 %main Document START here
 \begin{document}
-\frontmatter
+
 \maketitle
+
+
+
+
+
+
+
+%\begin{abstract}
+%myabstract
+%\end{abstract}
+%
+%\begin{IEEEkeywords}
+%mykeywords
+%\end{IEEEkeywords}
+%\frontmatter
+%\maketitle
 %\newpage
 %$L^AT_EX$
 \tableofcontents
-\mainmatter
+%\mainmatter
 \chapter{Day 1}
 
 \section{Installation and basic tools}
@@ -72,13 +88,7 @@ welcome
 after-compiling this file you will get a anyname.pdf file in the same folder like 
 
 
-\framebox{
-\begin{minipage}[t][5em][t]{.8\linewidth}
-\maketitle
-welcome
-\vspace{5px}
-\end{minipage}}
-\vspace{5px}
+
 
 
 $\backslash$documentclass should always be first line.\\
@@ -89,7 +99,7 @@ $\backslash$documentclass\{letter\}\\
 $\backslash$documentclass\{elsarticle\}\\
 
 
-
+\blindtext
 we can pass we extra options like selection of default paper size as \\
 $\backslash$documentclass[a4paper]\{article\}\\
 $\backslash$documentclass[letterpaper]\{article\}\\
@@ -113,12 +123,11 @@ the region before $\backslash$begin\{document\} is called document preamble and 
 \code{chapter\{\}} to group \texttt{section} is
 available in documentclass  \texttt{book} or \texttt{report}\\
 
-\subsection{section, subsection subsubsection}
-\blindtext
+
 \section{Label and referencing}
 $\ label{sec:lab}$\ $\ ref{sec:lab}$
 
-\blindtext
+%\blindtext
 %\subsection{hyperref}
 %\subsubsection{colorlinks=true and linkcolor=black}
 \section{Math}
@@ -140,29 +149,31 @@ $$\alpha \beta  \partial \Delta \gamma \omega \Omega \vec\nabla \cdot \vec B $$
 
 
 \subsection{Fractions sum integrals}
-\code{frac\{num\}\{den\}}$\frac{num}{den}$
+\code{frac\{num\}\{den\}}
+$$\frac{num}{den}$$
 \code{sum  }$\sum$ 
 \code{int}
-$\int$
+$$\int$$
 
 \subsection{Subscript and Superscript}
 \begin{verbatim}
-$a^2 $
+$$a^2 $$
 
-$b_s$
+$$b_s$$
 
-$\sum_{i=0}^10$
+$$\sum_{i=0}^1 \mathrm{a}r^i$$
 
-$\int_0^\infty$
+$$\int_0^\infty\mathrm{d}t$$
 
-$a^2 $
-
-$b_s$
-
-$\sum_{i=0}^10$
-
-$\int_0^\infty$
 \end{verbatim}
+$$a^2 $$
+
+$$b_s$$
+
+$$\sum_{i=0}^1 \mathrm{a}r^i$$
+
+$$\int_0^\infty x\ \mathrm{d}t $$
+
 
 \subsection{Dashes and minus}
 
@@ -171,6 +182,39 @@ $\int_0^\infty$
 a-b, a--b, a---b, $-1$
 
 
+\subsection{Array}
+
+used to align multiline equations
+\begin{verbatim}
+\begin{array}{rl}
+A&=b\\
+c&=d
+\end{array}
+\end{verbatim}
+$\begin{array}{rl}
+A&=b\\
+c&=d
+\end{array}$
+
+\subsection{Align}
+It is similar to array
+\begin{verbatim}
+\begin{align}
+A&=b\\
+c&=d
+\end{align}
+\end{verbatim}
+\begin{align}
+A&=b\\
+c&=d
+\end{align}
+\subsection{Brackets in equations}
+\codee{\backslash [ \backslash \{  \backslash left\{ }
+
+$$
+A=\left\{\begin{array}{rl}
+A&=b\\c&=d\end{array}\right. \}
+$$
 \subsection{Example equations}
 
 
@@ -181,7 +225,7 @@ $$\int^\infty_0{\frac{\overrightarrow{AB}}{\overrightarrow{C}\overrightarrow{D}}
 
 
 $$\vec{\Delta}.\vec{B}=0$$
-$E=mc^2$
+$$E=mc^2$$
 \[F=ma\]
 $$\vec{F}=m\hat{a}$$
 \begin{equation}
@@ -191,11 +235,13 @@ $$\vec{F}=m\hat{a}$$
 \vec{F}&=&m\hat{a}\\
 \int\frac{d}{dt}y&=&\frac{\delta y}{\mathrm{d\qquad prateek} t} \qquad\qquad\qquad y\in \{ \mathbf{R}\}
 \end{eqnarray}
+
+
 \begin{equation*}
 X(\omega) = 
 \begin{cases}
-1 &\text{se $\omega\in A$}\\
-1250 &\text{se $\omega \in A^c$}
+1 &\text{such\ that $\omega\in A$}\\
+1250 &\text{such\ that $\omega \in A^c$}
 \end{cases}
 \end{equation*}
 
@@ -204,45 +250,82 @@ A=\left\{\begin{array}{rl}
 A&=b\\c&=d\end{array}\right. \}
 $$
 
+
+
+%$$
+%A=\left\{\begin{eqnarray}
+%A&=b\\c&=d\end{eqnarray}\right. \}
+%$$
+
 $$ \vec\nabla \times \vec H = -\frac{\partial B}{\partial t}$$
 
 
 
 \section{List, items and description}
-\subsection{Un-numbered enumerate}
-\subsection{Numbered itemize }
+\subsection{Un-numbered itemize}
+\begin{verbatim}
+\begin{itemize}
+\item A
+\item B
+\end{itemize}
+\end{verbatim}
+
+\begin{itemize}
+\item A
+\item B
+\end{itemize}
+
+\subsection{Numbered enumerate }
+\begin{verbatim}
+\begin{enumerate}
+\item A
+\item B
+\end{enumerate}
+\end{verbatim}
+
+\begin{enumerate}
+\item A
+\item B
+\end{enumerate}
+
+
 \subsection{Description}
+\begin{verbatim}
+
+
+\begin{description}
+
+\item[foo]
+bar
+
+\item[baz]
+
+bang
+
+\end{description}
+\end{verbatim}
+
+\begin{description}
+
+\item[foo]
+bar
+
+\item[baz]
+
+bang
+
+\end{description}
 
 
 
-\subsection{subsection}
-\subsubsection{subsubsection}
-In section \ref{sec:eqn} we describe eqn, in section \ref{sec:list} list
+In table \ref{tab:1} we have described
 
 
-
-\section{list\label{sec:list}}
-
-%\section{new addition}
-%\section{Equations\label{sec:eqn}}
-
-\begin{figure}[!ht]
-\includegraphics[width=\linewidth]{./images/1.jpg}
-\caption{figure}
-\end{figure}
-\begin{figure*}[!ht]
-\includegraphics[width=\linewidth]{./images/2.jpg}
-\caption{figure* }
-\end{figure*}
-
-
-
-
-
-
-\section{table and tabular}
+\section{Table and tabular}
 \begin{table}
 \centering
+\includegraphics[width=\linewidth]{./images/2.jpg}
+\caption{table caption \label{tab:1}}
 \begin{tabular}{>{}p{3cm}|c|c|l}
 \hline
 hi sdg sd;f sdfllsdf adfdsf d df;glkd d sdfg;lk &dear&ssa&asd\\how &are you&&\\
@@ -257,16 +340,53 @@ hi&dear&ssa&asd\\how &are you&&\\
 
 
 
-\section{graphics picture and figure}
+\section{Graphicx and figure}
+\code{includegraphics}
+\begin{verbatim}
+\begin{figure}[htbp]
+\includegraphics[width=\linewidth]{./images/1.jpg}
+\caption{figure}
+\end{figure}
+\end{verbatim}
+\begin{figure}[htbp]
+\includegraphics[width=\linewidth]{./images/1.jpg}
+\caption{figure}
+\end{figure}
 
-jo
+
+
+%\section{new addition}
+%\section{Equations\label{sec:eqn}}
+
+
+\begin{figure*}[htbp]
+\includegraphics[width=\linewidth]{./images/2.jpg}
+\caption{figure* }
+\end{figure*}
+
 
 
 
 \chapter{Day 2}
 
-\section{Download and use IEEEtran \LaTeX template to convert article in to paper}
 
+
+
+\section{IEEEtran \LaTeX template}
+\subsection{Convert article to IEEEtran}
+
+
+\section{BibTeX}
+\subsection{Bibliography bib file and citation}
+
+\cite{8678453}
+
+
+\section{Practice session}
+\subsection{Convert webpage in to \LaTeX }
+\subsection{Convert \LaTeX\ in to different journal formats}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
 \end{document}
 % main Document END here
 
