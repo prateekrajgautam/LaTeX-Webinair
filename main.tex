@@ -1,55 +1,71 @@
-\documentclass[twocolumn]{book}
+\documentclass[twoside]{book}
+%\usepackage{apacite}
+% geometry fancyheader \thispage{}
+%KOMAscript
+
 % document preamble starts
-\usepackage[colorlinks=true,linkcolor=black]{hyperref}
-\usepackage{fullpage,amsmath,array}
-\usepackage{lipsum,blindtext,graphicx,verbatim,placeins}
-%\hyperref
 
+\usepackage{amsmath,array,xcolor}
+\usepackage{lipsum,blindtext,graphicx,verbatim}
 
-\title{Webinar on \LaTeX}
-\author{Prateek Raj Gautam}
-%\email{mailto:prateekrajgautam@gmail.com}
-
-
+%pandoc
+%FIGURE
+%
+%eps pdf png
 % document preamble ends
 
 
-\newcommand{\code}[1]{$\backslash #1$}
+%\newcommand{\code}[1]{$\backslash #1$}
 \newcommand{\codee}[1]{$$ #1$$}
 
+
+
+\title{Webinar on \LaTeX}
+\author{Prateek}
+
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black]{hyperref}
 
 %main Document START here
 \begin{document}
 
+
+%\begin{abstract}
+%\blindtext
+%\end{abstract}
+
+
 \maketitle
 
 
-
-
-
-
-
-%\begin{abstract}
-%myabstract
-%\end{abstract}
 %
-%\begin{IEEEkeywords}
-%mykeywords
-%\end{IEEEkeywords}
-%\frontmatter
-%\maketitle
-%\newpage
-%$L^AT_EX$
-\tableofcontents
-%\mainmatter
-\chapter{Day 1}
-
+%\begin{keywords}
+%Broad band networks, quality of service, WDM.
+%\end{keywords}
+	\newpage
+	\tableofcontents
+	\newpage
+	\listoffigures
+	\newpage
+	\listoftables
+%	
+%	
+%	
+%	\newpage
 \section{Installation and basic tools}
-Download TEXLIVE iso  from url \url{http://www.tug.org/texlive/}. Same iso image can be used on both linux and windows. Just mount it and run install command in the root directory and accept default options. It might take around 20 minutes to complete installation.
+
+%xcolor
+\textcolor{blue}{Download TEXLIVE iso  from url \url{http://www.tug.org/texlive/}. Same iso image can be used on both linux and windows. Just mount it and run install command in the root directory and accept default options. It might take around 20 minutes to complete installation.}
+%hyperref
+%\url
+
+
 \subsection{Editors}
 Although tex files can be edited in any basic text editor. just create a file with extension *.tex. you can create a new file newDoc.txt edit it save it and rename it as newDoc.tex so it can be used by tex or latex system.
 
-However, to ease the process we will use TEXWORKS \url{https://github.com/TeXworks/texworks/releases} the default latex editor/compiler that comes with the texlive. This is the minimalist kind of software, in my opinion best for beginners. Later, you might want to try other editors like \url{https://www.texstudio.org/} or \url{https://www.texniccenter.org/}.
+
+{\raggedleft{
+However, to ease the process we will use TEXWORKS \url{https://github.com/TeXworks/texworks/releases} the default latex editor/compiler that comes with the texlive. This is the minimalist kind of software, in my opinion best for beginners. Later, you might want to try other editors like \url{https://www.texstudio.org/} or \url{https://www.texniccenter.org/}.}
+}
 
 \subsubsection{Shortcuts for texworks}
 \begin{table}[!htbp]
@@ -116,11 +132,11 @@ the region before $\backslash$begin\{document\} is called document preamble and 
 \subsection{section, subsection, and subsubsection}
 \textbackslash$ section\{\}$\ $\backslash subsection\{\}$\ \textbackslash$subsubsection\{\}$
 \subsection{paragraph, linebreak, and indentation}
-\code{par}
-\code{\backslash}
-\code{noindent}
+{par\ }
+{\textbackslash}
+{noindent}
 \subsection{chapter}
-\code{chapter\{\}} to group \texttt{section} is
+``{chapter\{\}} to group \texttt{section} is
 available in documentclass  \texttt{book} or \texttt{report}\\
 
 
@@ -149,10 +165,10 @@ $$\alpha \beta  \partial \Delta \gamma \omega \Omega \vec\nabla \cdot \vec B $$
 
 
 \subsection{Fractions sum integrals}
-\code{frac\{num\}\{den\}}
+``{frac\{num\}\{den\}}
 $$\frac{num}{den}$$
-\code{sum  }$\sum$ 
-\code{int}
+``{sum  }$\sum$ 
+``{int}
 $$\int$$
 
 \subsection{Subscript and Superscript}
@@ -322,6 +338,8 @@ In table \ref{tab:1} we have described
 
 
 \section{Table and tabular}
+
+
 \begin{table}
 \centering
 \includegraphics[width=\linewidth]{./images/2.jpg}
@@ -341,7 +359,7 @@ hi&dear&ssa&asd\\how &are you&&\\
 
 
 \section{Graphicx and figure}
-\code{includegraphics}
+``{includegraphics}
 \begin{verbatim}
 \begin{figure}[htbp]
 \includegraphics[width=\linewidth]{./images/1.jpg}
@@ -367,31 +385,221 @@ hi&dear&ssa&asd\\how &are you&&\\
 
 
 
-\chapter{Day 2}
 
 
 
 
-\section{IEEEtran \LaTeX template}
-\subsection{Convert article to IEEEtran}
 
 
-\section{BibTeX}
-\subsection{Bibliography bib file and citation}
-
-\cite{8678453}
 
 
-\section{Practice session}
-\subsection{Convert webpage in to \LaTeX }
-\subsection{Convert \LaTeX\ in to different journal formats}
-\bibliographystyle{IEEEtran}
+\section{Day webinar code}
+
+\section{Introduction}
+\blindtext
+\subsection{Sub intro}
+\begin{figure*}[!ht]
+
+\includegraphics[width=\linewidth,height=5cm]{./images/1.jpg}
+\caption{My first figure caption\label{fig:1}}
+\end{figure*}
+
+
+\begin{figure}[!bp]
+
+\includegraphics[width=\linewidth]{./images/2.jpg}
+\caption{My second figure caption\label{fig:2}}
+\end{figure}
+
+
+{
+\tiny{tiny}
+\small{small}
+\footnotesize{fnsize}
+normal
+\large{large}
+}
+\section{bac}
+``\textit{italic text \emph{enphasised text}} \textbf{bold}\rq\rq{} \textsf{sans serif} \textrm{roman}
+
+
+
+\lq{}quote\rq{}\\
+
+`backtick\rq{}\\
+
+
+
+
+\emph{enphasised text}
+
+
+
+
+
+\blindtext
+%! force our choice
+%h here
+%t top
+%b bottom
+%p page
+
+
+% multicolumn and multirow package
+\begin{table}[!t]
+
+\centering
+
+\begin{tabular}{|p{.3\linewidth}|p{.3\linewidth}|p{.2\linewidth}|}
+\hline
+here some random text & just some extra text& $A=B$\\
+\hline
+here some random text here some random texthere some random texthere some random texthere some random text& just some extra text& $A=B$\\
+random text &  extra text& $B$\\
+here some random text & just some extra text& $A=B$\\
+random text &  extra text& $B$\\
+here some random text & just some extra text& $A=B$\\
+random text &  extra text& $B$\\
+here some random text & just some extra text& $A=B$\\
+random text &  extra text& $B$\\
+\hline 
+\end{tabular}
+\caption{test table \label{tab:1}}
+
+\end{table}
+
+\blindtext
+
+
+
+
+
+\begin{itemize}
+\item A
+\item B
+\item C
+\end{itemize}
+
+
+\begin{enumerate}
+\item A
+\item B
+\item C
+\end{enumerate}
+
+
+\begin{description}
+\item[A] full discription
+\item[B] B full disc
+\item[C] Full discription
+\end{description}
+
+
+test-end
+test--end
+test---end
+$test-end$
+\begin{align}
+E=&mc^2\\E=&\vec{b}\nonumber
+\end{align}
+
+
+
+
+
+\begin{equation}
+\int_{i=0}^\infty a= A
+\end{equation}
+
+
+
+\begin{equation}
+\overrightarrow{AB} \times \vec{BC} \in 
+\end{equation}
+
+
+$$k_{\|}$$
+
+\begin{equation}
+a=b \label{eqn:1}
+\end{equation}
+
+
+
+
+
+
+
+In line math $a=b$ end line \$
+
+\ref{eqn:2}
+
+
+
+\section{temp}
+\section{temp2}
+
+\section{Introduction to \LaTeX}\label{sec:intro}
+
+
+
+In section \ref{sec:2}, we have discussed some thing
+
+START\ \  \ \ \ \ \ \                   ipsum dolor sit amet, consectetuer adipiscing elit line end. 
+
+\section{temp}
+\section{temp2}
+
+\section{test chapter}\label{sec:2}
+
+
+In Intro section \ref{sec:intro}
+
+\textbackslash
+\%
+\&%alignment
+\ % space
+\\% for linebreak
+
+
+
+
+
+
+\par facilisis sem. Nullam nec mi et neque pharetra sollicitudin. Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales commodo, lectus velit ultrices augue, a dignissim nibh lectus placerat pede. Vivamus nunc nunc, molestieut, ultricies vel, semper in, velit. Ut porttitor. \par Praesent in sapien. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis fringilla tristique neque. Sed interdum libero ut metus.%
+
+ 
+  
+  
+% 1 pdfLaTeX 
+% 2 bibTeX
+% 3 pdfLaTeX
+% 4 pdfLaTeX
+  
+   
+    
+\noindent      Pellentesque placerat. Nam rutrum augue aleo. Morbi sed elit sit amet ante lobortis sollicitudin. Praesent blandit blanditmauris. Praesent lectus tellus, aliquet aliquam, luctus a, egestas a, turpis. PARAGRAPH CHANGE\\ Mauris lacinia lorem sit amet ipsum. Nunc quis urna dictum turpis accumsan 
+END.\cite{key1,key2} 
+
+
+
+
+$$\left\{\left(B^2_{N,2}=\left\lceil\frac{a}{b}\right\rceil\right)\right\}$$
+
+
+$$a\leq b$$
+$$a\neq b$$
+$$a\geq b$$
+
+
+$$a_1^2+b_1^2$$
+%\cite{key}
+
+\bibliographystyle{plain}
 \bibliography{references}
+
 \end{document}
 % main Document END here
-
-
-
 
 
 %Comments start with %
